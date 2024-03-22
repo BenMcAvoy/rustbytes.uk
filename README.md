@@ -1,13 +1,12 @@
-# Elysia with Bun runtime
+# RustBytes website
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+## Technologies:
+- Bun
+- JSX (only for templating)
+- Elysia
+- TailwindCSS
 
-## Development
-To start the development server run:
+## Run the site
 ```bash
 bun run dev
 ```
