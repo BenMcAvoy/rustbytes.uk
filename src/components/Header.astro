@@ -1,0 +1,96 @@
+---
+const page = Astro.url.toString().split('\/')[3];
+---
+
+<header>
+	<nav>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+			<path fill="none" d="M0 0h24v24H0z"/>
+			<path d="M12 2L2 7l10 5 10-5-10-5zm0 10.5L2 17V7l10 5 10-5v10l-10 5z"/>
+		</svg>
+
+		<div class="links"></div>
+			<a class={page == "" ? "selected" : ""} href='/'>Home</a>
+			<a class={page == "blog" ? "selected" : ""} href='/blog'>Blog</a>
+			<a class={page == "about" ? "selected" : ""} href='/about'>About</a>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	svg {
+		display: block;
+	}
+
+	nav {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+	}
+
+	.links {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+	a {
+    color: inherit;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: block;
+    position: relative;
+    margin-left: 20px;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  a:not(.selected) {
+    opacity: 0.7;
+  }
+
+  a::before {
+    content: '';
+    position: absolute;
+    transition: transform .3s ease;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+		@apply bg-blue-600;
+  }
+
+  a:hover::before,
+  .selected::before {
+    transform: scaleX(1);
+  }
+
+  .selected::before {
+    @apply bg-blue-600;
+  }
+</style>
+
+	<!-- nav a { -->
+	<!-- 	padding: 1em 0.5em; -->
+	<!-- 	color: var(--black); -->
+	<!-- 	border-bottom: 4px solid transparent; -->
+	<!-- 	text-decoration: none; -->
+	<!-- } -->
+	<!-- nav a.active { -->
+	<!-- 	text-decoration: none; -->
+	<!-- 	border-bottom-color: var(--accent); -->
+	<!-- } -->

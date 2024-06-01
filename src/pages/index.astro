@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>RustBytes blog</h1>
+			<p>
+			Welcome to the RustBytes blog! This blog is about <a href="https://www.rust-lang.org/">Rust</a>,
+			<a href="https://www.w3.org/TR/webassembly/">WebAssembly</a>, <a href="https://www.w3.org/TR/webgpu/">WebGPU</a>,
+			and other technologies that I may find interesting.
+			</p>
+
+			<p>
+				The blog is written in <a href="https://astro.build/">Astro</a>, a static site generator that I find to have good
+				performance, allows for modern web development practices, and is easy to use whilst still gnerating static files.
+			</p>
+
+			<p>
+				You can find the source code for this blog on <a href="https://github.com/BenMcAvoy/rustbytes.uk">GitHub</a>.
+			</p>
+
+			<p>To follow along with some of the posts, you may want to have the following tools installed: (not required)</p>
+
+			<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> curl</span><span style="color:#79B8FF"> --proto</span><span style="color:#9ECBFF"> '=https'</span><span style="color:#79B8FF"> --tlsv1.2</span><span style="color:#79B8FF"> -sSf</span><span style="color:#9ECBFF"> https://sh.rustup.rs</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> sh</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> rustup</span><span style="color:#9ECBFF"> target</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> wasm32-unknown-unknown</span></span>
+<span class="line"><span style="color:#B392F0">$</span><span style="color:#9ECBFF"> cargo</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> trunk</span></span>
+<span class="line"></span></code></pre>
+		</main>
+		<Footer />
+	</body>
+</html>
