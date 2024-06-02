@@ -71,7 +71,7 @@ const page = Astro.url.toString().split('\/')[3];
     width: 100%;
     height: 2px;
     transform: scaleX(0);
-		@apply bg-blue-600;
+    background-color: var(--accent);
   }
 
   a:hover::before,
@@ -80,17 +80,6 @@ const page = Astro.url.toString().split('\/')[3];
   }
 
   .selected::before {
-    @apply bg-blue-600;
+    background-color: var(--accent);
   }
 </style>
-
-	<!-- nav a { -->
-	<!-- 	padding: 1em 0.5em; -->
-	<!-- 	color: var(--black); -->
-	<!-- 	border-bottom: 4px solid transparent; -->
-	<!-- 	text-decoration: none; -->
-	<!-- } -->
-	<!-- nav a.active { -->
-	<!-- 	text-decoration: none; -->
-	<!-- 	border-bottom-color: var(--accent); -->
-	<!-- } -->

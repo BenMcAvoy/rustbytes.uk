@@ -29,11 +29,10 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a class="text-gray-900" href={`/blog/${post.slug}/`}>
-									<h4 class="title mt-2 mb-0">{post.data.title}</h4>
-									<p class="mb-0">{post.data.description}</p>
-
-									<p class="">- <FormattedDate date={post.data.pubDate} /></p>
+								<a href={`/blog/${post.slug}/`}>
+									<h4 class="title">{post.data.title}</h4>
+									<p>{post.data.description}</p>
+									<p>- <FormattedDate date={post.data.pubDate} /></p>
 								</a>
 							</li>
 						))
@@ -46,6 +45,17 @@ const posts = (await getCollection('blog')).sort(
 </html>
 
 <style>
+	/* Disable bullet points and indent for list items */
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
 	/* On hover we want to underline it and make it blue in an animated way */
 	/* we want the transition to go both ways */
 	.title, .title:hover {
